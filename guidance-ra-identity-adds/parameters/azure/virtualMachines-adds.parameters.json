@@ -8,8 +8,8 @@
         "computerNamePrefix": "aad",
         "size": "Standard_DS3_v2",
         "osType": "Windows",
-        "adminUsername": "testuser",
-        "adminPassword": "AweS0me@PW",
+        "adminUsername": "socadmin",
+        "adminPassword": "SOCsif123!@#!!",
         "osAuthenticationType": "password",
         "nics": [
           {

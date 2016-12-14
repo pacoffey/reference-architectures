@@ -49,9 +49,9 @@
       "value": {
         "namePrefix": "biz",
         "computerNamePrefix": "biz",
-        "size": "Standard_DS1_v2",
-        "adminUsername": "testuser",
-        "adminPassword": "AweS0me@PW",
+        "size": "Standard_D3",
+        "adminUsername": "socadmin",
+        "adminPassword": "SOCsif123!@#!!",
         "osType": "windows",
         "osAuthenticationType": "password",
         "sshPublicKey": "",
@@ -92,14 +92,14 @@
             "autoUpgradeMinorVersion": true,
             "settingsConfigMapperUri": "https://raw.githubusercontent.com/mspnp/template-building-blocks/master/templates/resources/Microsoft.Compute/virtualMachines/extensions/vm-extension-passthrough-settings-mapper.json",
             "settingsConfig": {
-              "Name": "contoso.com",
+              "Name": "tempus.com",
               "OUPath": "",
-              "User": "contoso.com\\testuser",
+              "User": "tempus.com\\socadmin",
               "Restart": true,
               "Options": 3
             },
             "protectedSettingsConfig": {
-              "Password": "AweS0me@PW"
+              "Password": "SOCsif123!@#!!"
             }
           },
           {

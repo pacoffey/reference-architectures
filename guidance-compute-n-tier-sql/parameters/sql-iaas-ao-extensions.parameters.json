@@ -47,14 +47,14 @@
                 "modulesURL": "https://raw.githubusercontent.com/mspnp/reference-architectures/master/guidance-compute-n-tier-sql/extensions/PrepareAlwaysOnSqlServer.ps1.zip",
                 "configurationFunction": "PrepareAlwaysOnSqlServer.ps1\\PrepareAlwaysOnSqlServer",
                 "properties": {
-                  "domainName": "contoso.com",
+                  "domainName": "tempus.com",
                   "sqlAlwaysOnEndpointName": "ra-ntier-sql-hadr",
                   "adminCreds": {
-                    "userName": "testuser",
+                    "userName": "socadmin",
                     "password": "privateSettingsRef:AdminPassword"
                   },
                   "sqlServiceCreds": {
-                    "userName": "sqlservicetestuser",
+                    "userName": "sqlservicesocadmin",
                     "password": "privateSettingsRef:SqlServerServiceAccountPassword"
                   },
                   "NumberOfDisks": "2",
@@ -63,7 +63,7 @@
               },
               "protectedSettingsConfig": {
                 "items": {
-                  "adminPassword": "AweS0me@PW",
+                  "adminPassword": "SOCsif123!@#!!",
                   "sqlServerServiceAccountPassword": "AweS0me@SQLServicePW"
                 }
               }

@@ -3,7 +3,7 @@
 # Then,
 # Run the following powershell script in ra-adtrust-ad-vm1 (ip 10.0.4.4)
 
-$TrustedDomainName = "contoso.com"
+$TrustedDomainName = "tempus.com"
 $TrustedDomainDnsIpAddresses = "192.168.0.4,192.168.0.5"
 
 #$TrustingDomainName = "treyresearch.com"

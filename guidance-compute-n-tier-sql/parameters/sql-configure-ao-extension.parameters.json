@@ -18,7 +18,7 @@
                 "modulesURL": "https://raw.githubusercontent.com/mspnp/reference-architectures/master/guidance-compute-n-tier-sql/extensions/CreateFailoverCluster.ps1.zip",
                 "configurationFunction": "CreateFailoverCluster.ps1\\CreateFailoverCluster",
                 "properties": {
-                  "domainName": "contoso.com",
+                  "domainName": "tempus.com",
                   "clusterName": "ra-ntier-sql-fc",
                   "sharePath": "\\\\fsw1\\sql-fs",
                   "nodes": [
@@ -36,11 +36,11 @@
                   "secondaryReplica": "sql1",
                   "dnsServerName": "ad1",
                   "adminCreds": {
-                    "userName": "testuser",
+                    "userName": "socadmin",
                     "password": "privateSettingsRef:adminPassword"
                   },
                   "sqlServiceCreds": {
-                    "userName": "sqlservicetestuser",
+                    "userName": "sqlservicesocadmin",
                     "password": "privateSettingsRef:sqlServerServiceAccountPassword"
                   },
                   "SQLAuthCreds": {
@@ -53,9 +53,9 @@
               },
               "protectedSettingsConfig": {
                 "items": {
-                  "adminPassword": "AweS0me@PW",
-                  "sqlServerServiceAccountPassword": "AweS0me@SQLServicePW",
-                  "sqlAuthPassword": "AweS0me@SQLPW"
+                  "adminPassword": "SOCsif123!@#!!",
+                  "sqlServerServiceAccountPassword": "ZAQ!2wsxCDE#4rfv",
+                  "sqlAuthPassword": "ZAQ!2wsxCDE#4rfv"
                 }
               }
 
@@ -66,4 +66,3 @@
     }
   }
 }
-

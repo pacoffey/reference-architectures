@@ -2,10 +2,10 @@
 # Deploy_ReferenceArchitecture.ps1
 #
 param(
-  [Parameter(Mandatory=$true)]
-  $SubscriptionId,
+  #[Parameter(Mandatory=$false)]
+  #$SubscriptionId,
   [Parameter(Mandatory=$false)]
-  $Location = "Central US",
+  $Location = "USGov Virginia",
   [Parameter(Mandatory=$false)]
   [ValidateSet("Windows", "Linux")]
   $OSType = "Windows"
@@ -38,7 +38,11 @@ $networkSecurityGroupParametersFile = [System.IO.Path]::Combine($PSScriptRoot, "
 $resourceGroupName = "ra-multi-vm-rg"
 
 # Login to Azure and select your subscription
-Login-AzureRmAccount -SubscriptionId $SubscriptionId | Out-Null
+$YourSubscriptionName = "US Government Azure Sponsorship"
+$YourAssociatedSubscriptionTenantId = "60b3102b-ecf0-4aa4-bbed-5e13661e7807"
+$cred = Get-Credential
+Login-AzureRmAccount -Credential $cred | Out-Null
+Get-AzureRmSubscription -SubscriptionName $YourSubscriptionName -TenantId $YourAssociatedSubscriptionTenantId
 
 # Create the resource group
 $resourceGroup = New-AzureRmResourceGroup -Name $resourceGroupName -Location $Location

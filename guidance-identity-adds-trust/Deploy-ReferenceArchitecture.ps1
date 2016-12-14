@@ -217,7 +217,7 @@ if ($Mode -eq "AzureADDS" -Or $Mode -eq "Prepare") {
 	Write-Host "# Manual steps to install AD Domain Trust between from Azure Domain to Onprem Domain"
 	Write-Host "##########################################################################"
 	Write-Host 
-	Write-Host "# 1. RDP to the jumpbox, then RDP to ra-adtrust-onpremise-ad-vm1 (ip 192.168.0.4) with contoso\testuser "
+	Write-Host "# 1. RDP to the jumpbox, then RDP to ra-adtrust-onpremise-ad-vm1 (ip 192.168.0.4) with contoso\socadmin "
 	Write-Host 
 	Write-Host "# 2. In onpremise-ad-vm1, run incoming-trust.ps1 "
 	Write-Host  

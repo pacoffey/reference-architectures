@@ -6,9 +6,9 @@
       "value": {
         "namePrefix": "ra-aad-ntier-mgmt",
         "computerNamePrefix": "cn",
-        "size": "Standard_DS1",
-        "adminUsername": "testuser",
-        "adminPassword": "AweS0me@PW",
+        "size": "Standard_D1",
+        "adminUsername": "socadmin",
+        "adminPassword": "SOCsif123!@#!!",
         "osType": "windows",
         "osAuthenticationType": "password",
         "sshPublicKey": "",

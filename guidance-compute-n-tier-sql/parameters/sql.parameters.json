@@ -49,10 +49,10 @@
       "value": {
         "namePrefix": "ra-ntier-sql",
         "computerNamePrefix": "sql",
-        "size": "Standard_DS1_v2",
+        "size": "Standard_D3",
         "osType": "windows",
-        "adminUsername": "testuser",
-        "adminPassword": "AweS0me@PW",
+        "adminUsername": "socadmin",
+        "adminPassword": "SOCsif123!@#!!",
         "sshPublicKey": "",
         "osAuthenticationType": "password",
         "nics": [
@@ -95,14 +95,14 @@
             "autoUpgradeMinorVersion": true,
             "settingsConfigMapperUri": "https://raw.githubusercontent.com/mspnp/template-building-blocks/master/templates/resources/Microsoft.Compute/virtualMachines/extensions/vm-extension-passthrough-settings-mapper.json",
             "settingsConfig": {
-              "Name": "contoso.com",
+              "Name": "tempus.com",
               "OUPath": "",
-              "User": "contoso.com\\testuser",
+              "User": "tempus.com\\socadmin",
               "Restart": true,
               "Options": 3
             },
             "protectedSettingsConfig": {
-              "Password": "AweS0me@PW"
+              "Password": "SOCsif123!@#!!"
             }
           }
         ],

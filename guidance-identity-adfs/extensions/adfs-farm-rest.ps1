@@ -22,12 +22,12 @@
 )
 
 ###############################################
-# $AdminUser = "testuser"
-# $AdminPassword = "AweS0me@PW"
+# $AdminUser = "socadmin"
+# $AdminPassword = "SOCsif123!@#!!"
 # $NetBiosDomainName = "CONTOSO"
-# $FqDomainName = "contoso.com"
+# $FqDomainName = "tempus.com"
 # $GmsaName = "adfsgmsa"
-# $FederationName = "adfs.contoso.com"
+# $FederationName = "adfs.tempus.com"
 # $PrimaryComputerName = "adfs1"
 
 # get credential of the domain admin
@@ -52,22 +52,22 @@ Enable-AdfsDeviceRegistration -Credential $Credential -Force
 
 
 # Test with the folloiwng link
-# https://adfs.contoso.com/adfs/ls/idpinitiatedsignon.htm
+# https://adfs.tempus.com/adfs/ls/idpinitiatedsignon.htm
 
 ###############################################
 # Note
 # Manual step for install certificate to the ADFS VMs:
 
-# 1. Make sure you have a certificate (e.g. adfs.contoso.com.pfx) either self created or signed by VerifSign, Go Daddy, DigiCert, and etc.
+# 1. Make sure you have a certificate (e.g. adfs.tempus.com.pfx) either self created or signed by VerifSign, Go Daddy, DigiCert, and etc.
 
 # 2. RDP to the each ADFS VM (adfs1-vm, adfs2-vm, ...)
 
 # 3. Copy to c:\temp the following file
 #		c:\temp\certutil.exe
-#		c:\temp\adfs.contoso.com.pfx 
+#		c:\temp\adfs.tempus.com.pfx 
 
 # 4. Run the following command prompt as admin:
-#    	certutil.exe -privatekey -importPFX my C:\temp\adfs.contoso.com.pfx NoExport
+#    	certutil.exe -privatekey -importPFX my C:\temp\adfs.tempus.com.pfx NoExport
 
 # 5. Start MMC, Add Certificates Snap-in, sellect Computer account, and verify that the following certificate is installed:
-#      \Certificates (Local Computer)\Personal\Certificates\adfs.contoso.com
+#      \Certificates (Local Computer)\Personal\Certificates\adfs.tempus.com

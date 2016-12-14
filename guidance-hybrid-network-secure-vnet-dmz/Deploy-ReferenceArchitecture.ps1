@@ -5,7 +5,7 @@ param(
   [Parameter(Mandatory=$true)]
   $SubscriptionId,
   [Parameter(Mandatory=$false)]
-  $Location = "West US 2"
+  $Location = "USGOV Virginia"
 )
 
 $ErrorActionPreference = "Stop"
@@ -44,8 +44,15 @@ $networkSecurityGroupsParametersFile = [System.IO.Path]::Combine($PSScriptRoot, 
 $networkResourceGroupName = "ra-public-dmz-network-rg"
 $workloadResourceGroupName = "ra-public-dmz-wl-rg"
 
+$YourSubscriptionName = "US Government Azure Sponsorship"
+$YourAssociatedSubscriptionTenantId = "60b3102b-ecf0-4aa4-bbed-5e13661e7807"
+
 # Login to Azure and select your subscription
-Login-AzureRmAccount -SubscriptionId $SubscriptionId | Out-Null
+Login-AzureRmAccount -SubscriptionId $SubscriptionId -TenantId $YourAssociatedSubscriptionTenantId | Out-Null
+# Login to Azure and select your subscription
+# $cred = Get-Credential
+# Login-AzureRmAccount -Credential $cred | Out-Null
+# Get-AzureRmSubscription -SubscriptionName $YourSubscriptionName -TenantId $YourAssociatedSubscriptionTenantId
 
 # Create the resource group
 $networkResourceGroup = New-AzureRmResourceGroup -Name $networkResourceGroupName -Location $Location

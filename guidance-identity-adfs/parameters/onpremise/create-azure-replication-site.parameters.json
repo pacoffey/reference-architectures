@@ -16,9 +16,9 @@
               "settingsConfigMapperUri": "https://raw.githubusercontent.com/mspnp/reference-architectures/master/guidance-identity-adfs/templates/onpremise/ad-replication-site-extension-settings-mapper.json",
               "settingsConfig": {
                 "activeDirectorySettings": {
-                  "adminUser": "testuser",
-                  "adminPassword": "AweS0me@PW",
-                  "domainName": "contoso.com",
+                  "adminUser": "socadmin",
+                  "adminPassword": "SOCsif123!@#!!",
+                  "domainName": "tempus.com",
                   "azureSiteName": "Azure-Vnet-Site",
                   "onPremiseSiteName": "Default-First-Site-Name",
                   "azureAddressSpace": "10.0.0.0/16",

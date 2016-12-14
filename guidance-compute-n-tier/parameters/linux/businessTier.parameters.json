@@ -49,9 +49,9 @@
       "value": {
         "namePrefix": "ra-ntier-biz",
         "computerNamePrefix": "biz",
-        "size": "Standard_DS1",
-        "adminUsername": "testuser",
-        "adminPassword": "AweS0me@PW",
+        "size": "Standard_D1",
+        "adminUsername": "socadmin",
+        "adminPassword": "SOCsif123!@#!!",
         "osType": "linux",
         "osAuthenticationType": "password",
         "sshPublicKey": "",

@@ -16,9 +16,9 @@
               "settingsConfigMapperUri": "https://raw.githubusercontent.com/mspnp/reference-architectures/master/guidance-identity-adfs/templates/onpremise/adds-domain-controller-extension-settings-mapper.json",
               "settingsConfig": {
                 "activeDirectorySettings": {
-                  "domainName": "contoso.com",
-                  "adminUser": "testuser",
-                  "adminPassword": "AweS0me@PW",
+                  "domainName": "tempus.com",
+                  "adminUser": "socadmin",
+                  "adminPassword": "SOCsif123!@#!!",
                   "siteName": "Azure-Vnet-Site",
                   "safeModePassword": "Saf3M0de@PW"
                 },

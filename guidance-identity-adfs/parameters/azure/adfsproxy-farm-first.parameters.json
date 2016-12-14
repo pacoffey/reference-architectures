@@ -16,10 +16,10 @@
               "settingsConfigMapperUri": "https://raw.githubusercontent.com/mspnp/reference-architectures/master/guidance-identity-adfs/templates/onpremise/adfsproxy-farm-first-extension-settings-mapper.json",
               "settingsConfig": {
                 "activeDirectorySettings": {
-                  "adminUser": "testuser",
-                  "adminPassword": "AweS0me@PW",
+                  "adminUser": "socadmin",
+                  "adminPassword": "SOCsif123!@#!!",
                   "netBiosDomainName": "CONTOSO",
-                  "federationName": "adfs.contoso.com"
+                  "federationName": "adfs.tempus.com"
                 },
                 "fileUris": [
                   "https://raw.githubusercontent.com/mspnp/reference-architectures/master/guidance-identity-adfs/extensions/adfsproxy-farm-first.ps1"

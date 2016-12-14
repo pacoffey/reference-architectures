@@ -24,28 +24,28 @@
 ###############################################
 # Manual step for install certificate to the ADFS VMs:
 
-# 1. Make sure you have a certificate (e.g. adfs.contoso.com.pfx) either self created or signed by VerifSign, Go Daddy, DigiCert, and etc.
+# 1. Make sure you have a certificate (e.g. adfs.tempus.com.pfx) either self created or signed by VerifSign, Go Daddy, DigiCert, and etc.
 
 # 2. RDP to the each ADFS VM (adfs1-vm, adfs2-vm, ...)
 
 # 3. Copy to c:\temp the following file
 #		c:\temp\certutil.exe
-#		c:\temp\adfs.contoso.com.pfx 
+#		c:\temp\adfs.tempus.com.pfx 
 
 # 4. Run the following command prompt as admin:
-#    	certutil.exe -privatekey -importPFX my C:\temp\adfs.contoso.com.pfx NoExport
+#    	certutil.exe -privatekey -importPFX my C:\temp\adfs.tempus.com.pfx NoExport
 
 # 5. Start MMC, Add Certificates Snap-in, sellect Computer account, and verify that the following certificate is installed:
-#      \Certificates (Local Computer)\Personal\Certificates\adfs.contoso.com
+#      \Certificates (Local Computer)\Personal\Certificates\adfs.tempus.com
 
 ###############################################
 
-# $AdminUser = "testuser"
-# $AdminPassword = "AweS0me@PW"
+# $AdminUser = "socadmin"
+# $AdminPassword = "SOCsif123!@#!!"
 # $NetBiosDomainName = "CONTOSO"
-# $FqDomainName = "contoso.com"
+# $FqDomainName = "tempus.com"
 # $GmsaName = "adfsgmsa"
-# $FederationName = "adfs.contoso.com"
+# $FederationName = "adfs.tempus.com"
 # $Description = "Contoso Corporation"
 
 ###############################################
@@ -68,12 +68,12 @@ Initialize-ADDeviceRegistration -ServiceAccountName "$NetBiosDomainName\$GmsaNam
 Enable-AdfsDeviceRegistration -Credential $Credential -Force
 
 # Test with the folloiwng link
-# https://adfs.contoso.com/adfs/ls/idpinitiatedsignon.htm
+# https://adfs.tempus.com/adfs/ls/idpinitiatedsignon.htm
 
 ###############################################
 # Note:
-# If you don't have a public signed certificate (e.g.adfs.contoso.com.pfx) by VerifSign, Go Daddy, DigiCert, and etc.
-# Here are manual steps to create a self singed test certificate adfs.contoso.com.pfx
+# If you don't have a public signed certificate (e.g.adfs.tempus.com.pfx) by VerifSign, Go Daddy, DigiCert, and etc.
+# Here are manual steps to create a self singed test certificate adfs.tempus.com.pfx
 
 # 1. Log on your developer machine
 
@@ -86,16 +86,16 @@ Enable-AdfsDeviceRegistration -Credential $Credential -Force
 #	    C:/temp/MyFakeRootCertificateAuthority.cer
 #	    C:/temp/MyFakeRootCertificateAuthority.pvk
 
-# 4. Run command prompt as admin to use my fake root certificate authority to generate a certificate for adfs.contoso.com
-#      makecert -sk pkey -iv MyFakeRootCertificateAuthority.pvk -a sha256 -n "CN=adfs.contoso.com , CN=enterpriseregistration.contoso.com" -ic MyFakeRootCertificateAuthority.cer -sr localmachine -ss my -sky exchange -pe
+# 4. Run command prompt as admin to use my fake root certificate authority to generate a certificate for adfs.tempus.com
+#      makecert -sk pkey -iv MyFakeRootCertificateAuthority.pvk -a sha256 -n "CN=adfs.tempus.com , CN=enterpriseregistration.tempus.com" -ic MyFakeRootCertificateAuthority.cer -sr localmachine -ss my -sky exchange -pe
 
 # 5. Start MMC certificates console 
-#	 Expand to /Certificates (Local Computer)/Personal/Certificate/adfs.contoso.com 
+#	 Expand to /Certificates (Local Computer)/Personal/Certificate/adfs.tempus.com 
 #	 Export the certificate with the private key to 
-#       C:/temp/adfs.contoso.com.pfx
+#       C:/temp/adfs.tempus.com.pfx
 
 # 6. Make sure you have the following files in the C:\temp
 #	    MyFakeRootCertificateAuthority.cer
 #       MyFakeRootCertificateAuthority.pvk
-#       adfs.contoso.com.pfx
+#       adfs.tempus.com.pfx
 

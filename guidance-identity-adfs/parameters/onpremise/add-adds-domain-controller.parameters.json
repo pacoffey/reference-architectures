@@ -15,14 +15,14 @@
               "autoUpgradeMinorVersion": true,
               "settingsConfigMapperUri": "https://raw.githubusercontent.com/mspnp/template-building-blocks/master/templates/resources/Microsoft.Compute/virtualMachines/extensions/vm-extension-passthrough-settings-mapper.json",
               "settingsConfig": {
-                "Name": "contoso.com",
+                "Name": "tempus.com",
                 "OUPath": "",
-                "User": "contoso.com\\testuser",
+                "User": "tempus.com\\socadmin",
                 "Restart": true,
                 "Options": 3
               },
               "protectedSettingsConfig": {
-                "Password": "AweS0me@PW"
+                "Password": "SOCsif123!@#!!"
               }
             },
             {
@@ -34,9 +34,9 @@
               "settingsConfigMapperUri": "https://raw.githubusercontent.com/mspnp/reference-architectures/master/guidance-identity-adfs/templates/onpremise/adds-domain-controller-extension-settings-mapper.json",
               "settingsConfig": {
                 "activeDirectorySettings": {
-                  "domainName": "contoso.com",
-                  "adminUser": "testuser",
-                  "adminPassword": "AweS0me@PW",
+                  "domainName": "tempus.com",
+                  "adminUser": "socadmin",
+                  "adminPassword": "SOCsif123!@#!!",
                   "siteName": "Default-First-Site-Name",
                   "safeModePassword": "Saf3M0de@PW"
                 },

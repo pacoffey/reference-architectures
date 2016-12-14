@@ -17,12 +17,12 @@
               "settingsConfig": {
                 "Name": "treyresearch.com",
                 "OUPath": "",
-                "User": "treyresearch.com\\testuser",
+                "User": "treyresearch.com\\socadmin",
                 "Restart": true,
                 "Options": 3
               },
               "protectedSettingsConfig": {
-                "Password": "AweS0me@PW"
+                "Password": "SOCsif123!@#!!"
               }
             },
             {
@@ -35,8 +35,8 @@
               "settingsConfig": {
                 "activeDirectorySettings": {
                   "domainName": "treyresearch.com",
-                  "adminUser": "testuser",
-                  "adminPassword": "AweS0me@PW",
+                  "adminUser": "socadmin",
+                  "adminPassword": "SOCsif123!@#!!",
                   "siteName": "Default-First-Site-Name",
                   "safeModePassword": "Saf3M0de@PW"
                 },

@@ -266,7 +266,7 @@ if ($Mode -eq "ProxyVm" -Or $Mode -eq "Prepare") {
 ##########################################################################
 # Install certificate to ADFS VMs and ADFS Web Application Proxy VMs (manual step)
 ##########################################################################
-#  Manual steps to create a fake root certificate and and use it to create adfs.contoso.com.pfx
+#  Manual steps to create a fake root certificate and and use it to create adfs.tempus.com.pfx
 #  1. Log on your developer machine (note: adfs boxes are domain joined, proxy boxes are not domain joined)
 #  2. Download makecert.exe to 
 #        C:/temp/makecert.exe 
@@ -275,22 +275,22 @@ if ($Mode -eq "ProxyVm" -Or $Mode -eq "Prepare") {
 #  4. Verify that the foloiwng files are created
 # 	     C:/temp/MyFakeRootCertificateAuthority.cer
 # 	     C:/temp/MyFakeRootCertificateAuthority.pvk
-#  5. Run command prompt as admin to use my fake root certificate authority to generate a certificate for adfs.contoso.com
-#        makecert -sk pkey -iv MyFakeRootCertificateAuthority.pvk -a sha256 -n "CN=adfs.contoso.com , CN=enterpriseregistration.contoso.com" -ic MyFakeRootCertificateAuthority.cer -sr localmachine -ss my -sky exchange -pe
-#  6. Start MMC certificates console, expand to /Certificates (Local Computer)/Personal/Certificate/adfs.contoso.com and export the certificate with the private key to 
-#        C:/temp/adfs.contoso.com.pfx
+#  5. Run command prompt as admin to use my fake root certificate authority to generate a certificate for adfs.tempus.com
+#        makecert -sk pkey -iv MyFakeRootCertificateAuthority.pvk -a sha256 -n "CN=adfs.tempus.com , CN=enterpriseregistration.tempus.com" -ic MyFakeRootCertificateAuthority.cer -sr localmachine -ss my -sky exchange -pe
+#  6. Start MMC certificates console, expand to /Certificates (Local Computer)/Personal/Certificate/adfs.tempus.com and export the certificate with the private key to 
+#        C:/temp/adfs.tempus.com.pfx
 # ###############################################
 # Install certificate to the ADFS and ADFS Proxy VMs:
-# 1. Make sure you have a certificate adfs.contoso.com.pfx either self created or signed by VerifSign, Go Daddy, DigiCert, and etc.
+# 1. Make sure you have a certificate adfs.tempus.com.pfx either self created or signed by VerifSign, Go Daddy, DigiCert, and etc.
 # 2. RDP to the each ADFS VM adfs1, adfs2, ...and each ADFS Proxy VM proxy1, proxy2, ...
 # 3. Copy to c:\temp the following file
-#		c:\temp\adfs.contoso.com.pfx 
+#		c:\temp\adfs.tempus.com.pfx 
 #       c:\MyFakeRootCertificateAuthority.cer  (if you created the above cert yourself )
 # 4. Run the following command prompt as admin:
-#    	certutil.exe -privatekey -importPFX my C:\temp\adfs.contoso.com.pfx NoExport
+#    	certutil.exe -privatekey -importPFX my C:\temp\adfs.tempus.com.pfx NoExport
 #	    certutil.exe -addstore Root C:\temp\MyFakeRootCertificateAuthority.cer 
 # 5. Start MMC, Add Certificates Snap-in, sellect Computer account, and verify that the following certificate is installed:
-#      \Certificates (Local Computer)\Personal\Certificates\adfs.contoso.com
+#      \Certificates (Local Computer)\Personal\Certificates\adfs.tempus.com
 #      \Certificates (Local Computer)\Trusted Root Certification Authorities\Certificates\MyFakeRootCertificateAuthority 
 ##########################################################################
 
@@ -332,7 +332,7 @@ if ($Mode -eq "Adfs") {
 	Write-Host
 	Write-Host  "2. Remote Desktop to the jumpbox"
 	Write-Host
-	Write-Host  "3. Browse to https://adfs.contoso.com/adfs/ls/idpinitiatedsignon.htm"
+	Write-Host  "3. Browse to https://adfs.tempus.com/adfs/ls/idpinitiatedsignon.htm"
 }
 
 ##########################################################################
@@ -375,7 +375,7 @@ if ($Mode -eq "Proxy1" ) {
 	Write-Host
 	Write-Host  "5. Add the following line"
 	Write-Host
-	Write-Host  "      11.22.33.44 adfs.contoso.com (note: assume the ip is 11.22.33.44)"
+	Write-Host  "      11.22.33.44 adfs.tempus.com (note: assume the ip is 11.22.33.44)"
 	Write-Host
 	Write-Host  "6. Save the hosts file and run the following command to restart the dns client"
 	Write-Host
@@ -383,7 +383,7 @@ if ($Mode -eq "Proxy1" ) {
 	Write-Host
 	Write-Host  "7. Browse to:"
 	Write-Host
-	Write-Host  "     https://adfs.contoso.com/adfs/ls/idpinitiatedsignon.htm"
+	Write-Host  "     https://adfs.tempus.com/adfs/ls/idpinitiatedsignon.htm"
 	Write-Host
 	Write-Host  " Please login to proxy1 to check any errors if the test fail. If proxy1 is OK, then stop proxy2 to test again"
 	Write-Host
@@ -407,7 +407,7 @@ if ($Mode -eq "Proxy2" ) {
 	Write-Host  
 	Write-Host  "Please login to proxy2 to verify the web application proxy installation"
 	Write-Host  
-	Write-Host  "Please browse to https://adfs.contoso.com/adfs/ls/idpinitiatedsignon.htm from your development machine to test the adfs proxy installation. You may want to stop proxy1"
+	Write-Host  "Please browse to https://adfs.tempus.com/adfs/ls/idpinitiatedsignon.htm from your development machine to test the adfs proxy installation. You may want to stop proxy1"
 	Write-Host  
 	Write-Host  " Run the deployment again with -Mode Proy2 if the proxy2 deployment fails. "
 	Write-Host

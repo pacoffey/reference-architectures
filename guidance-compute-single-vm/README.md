@@ -84,7 +84,7 @@ Download the [virtualMachineParameters.json][vm-parameters] and make any necessa
 	      "value": {
 	        "namePrefix": "ra-single-vm",
 	        "computerNamePrefix": "cn",
-	        "size": "Standard_DS1_v2",
+	        "size": "Standard_D3",
 	        "osType": "linux",
 	        "adminUsername": "",
 	        "adminPassword": "",

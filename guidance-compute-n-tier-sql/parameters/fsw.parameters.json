@@ -6,10 +6,10 @@
       "value": {
         "namePrefix": "ra-ntier-sql-fsw",
         "computerNamePrefix": "fsw",
-        "size": "Standard_DS1_v2",
+        "size": "Standard_D3",
         "osType": "windows",
-        "adminUsername": "testuser",
-        "adminPassword": "AweS0me@PW",
+        "adminUsername": "socadmin",
+        "adminPassword": "SOCsif123!@#!!",
         "sshPublicKey": "",
         "osAuthenticationType": "password",
         "nics": [
@@ -52,14 +52,14 @@
             "autoUpgradeMinorVersion": true,
             "settingsConfigMapperUri": "https://raw.githubusercontent.com/mspnp/template-building-blocks/master/templates/resources/Microsoft.Compute/virtualMachines/extensions/vm-extension-passthrough-settings-mapper.json",
             "settingsConfig": {
-              "Name": "contoso.com",
+              "Name": "tempus.com",
               "OUPath": "",
-              "User": "contoso.com\\testuser",
+              "User": "tempus.com\\socadmin",
               "Restart": true,
               "Options": 3
             },
             "protectedSettingsConfig": {
-              "Password": "AweS0me@PW"
+              "Password": "SOCsif123!@#!!"
             }
           },
           {
@@ -73,17 +73,17 @@
               "modulesURL": "https://raw.githubusercontent.com/mspnp/reference-architectures/master/guidance-compute-n-tier-sql/extensions/CreateFileShareWitness.ps1.zip",
               "configurationFunction": "CreateFileShareWitness.ps1\\CreateFileShareWitness",
               "properties": {
-                "domainName": "contoso.com",
+                "domainName": "tempus.com",
                 "SharePath": "sql-fs",
                 "adminCreds": {
-                  "userName": "testuser",
+                  "userName": "socadmin",
                   "password": "privateSettingsRef:adminPassword"
                 }
               }
             },
             "protectedSettingsConfig": {
               "items": {
-                "adminPassword": "AweS0me@PW"
+                "adminPassword": "SOCsif123!@#!!"
               }
             }
           }
@@ -110,4 +110,3 @@
     }
   }
 }
-

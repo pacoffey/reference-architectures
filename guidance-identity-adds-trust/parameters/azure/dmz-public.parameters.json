@@ -41,8 +41,8 @@
           "virtualMachineSettings": {
             "count": 2,
             "size": "Standard_DS2_v2",
-            "adminUsername": "testuser",
-            "adminPassword": "AweS0me@PW",
+            "adminUsername": "socadmin",
+            "adminPassword": "SOCsif123!@#!!",
             "osAuthenticationType": "password",
             "sshPublicKey": "",
             "imageReference": {

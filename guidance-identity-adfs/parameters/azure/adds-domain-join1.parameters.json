@@ -16,9 +16,9 @@
               "settingsConfigMapperUri": "https://raw.githubusercontent.com/mspnp/reference-architectures/master/guidance-identity-adfs/templates/onpremise/adds-domain-join1-settings-mapper.json",
               "settingsConfig": {
                 "activeDirectorySettings": {
-                  "adminUser": "testuser",
-                  "adminPassword": "AweS0me@PW",
-                  "domainName": "contoso.com"
+                  "adminUser": "socadmin",
+                  "adminPassword": "SOCsif123!@#!!",
+                  "domainName": "tempus.com"
                 },
                 "fileUris": [
                   "https://raw.githubusercontent.com/mspnp/reference-architectures/master/guidance-identity-adfs/extensions/domain-join1.ps1"

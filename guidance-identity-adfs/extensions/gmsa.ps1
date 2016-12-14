@@ -25,12 +25,12 @@ Param(
   [string]$HostIp
 )
 
-# $AdminUser = "testuser"
-# $AdminPassword = "AweS0me@PW"
+# $AdminUser = "socadmin"
+# $AdminPassword = "SOCsif123!@#!!"
 # $NetBiosDomainName = "CONTOSO"
-# $FqDomainName = "contoso.com"
+# $FqDomainName = "tempus.com"
 # $GmsaName = "adfsgmsa"
-# $FederationName = "adfs.contoso.com"
+# $FederationName = "adfs.tempus.com"
 # $HostName="adfs"
 # $HostIp="10.0.255.190"
 
@@ -43,11 +43,11 @@ $credential = New-Object System.Management.Automation.PSCredential ("$NetBiosDom
 ###############################################
 # Create group managed service accout (you can use ADSI Edit to verify)
 Add-KdsRootKey –EffectiveTime (Get-Date).AddHours(-10) 
-#New-ADServiceAccount adfsgmsa -DNSHostName adfs.contoso.com -AccountExpirationDate $null -ServicePrincipalNames host/adfs.contoso.com -Credential $credential
+#New-ADServiceAccount adfsgmsa -DNSHostName adfs.tempus.com -AccountExpirationDate $null -ServicePrincipalNames host/adfs.tempus.com -Credential $credential
 New-ADServiceAccount $GmsaName -DNSHostName $FederationName -AccountExpirationDate $null -ServicePrincipalNames "host/$FederationName" -Credential $credential
 
 ###############################################
 # add DNS Record for adfs load balancer (you cna use DNS tool to verify)
-# Add-DnsServerResourceRecordA -Name "adfs" -ZoneName "contoso.com" -AllowUpdateAny -IPv4Address "10.0.255.190"
+# Add-DnsServerResourceRecordA -Name "adfs" -ZoneName "tempus.com" -AllowUpdateAny -IPv4Address "10.0.255.190"
 Add-DnsServerResourceRecordA -Name $HostName -ZoneName $FqDomainName -AllowUpdateAny -IPv4Address $HostIp
 

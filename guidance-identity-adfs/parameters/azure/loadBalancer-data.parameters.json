@@ -6,10 +6,10 @@
       "value": {
         "namePrefix": "ra-adfs-data",
         "computerNamePrefix": "data",
-        "size": "Standard_DS1_v2",
+        "size": "Standard_D3",
         "osType": "windows",
-        "adminUsername": "testuser",
-        "adminPassword": "AweS0me@PW",
+        "adminUsername": "socadmin",
+        "adminPassword": "SOCsif123!@#!!",
         "osAuthenticationType": "password",
         "nics": [
           {

@@ -1,7 +1,7 @@
 ﻿[CmdletBinding()]
 Param(
 	[string]$SafeModePassword = "SafeModeP@ssw0rd",
-	[string]$DomainName = "contoso.com",
+	[string]$DomainName = "tempus.com",
 	[string]$DomainNetbiosName = "CONTOSO"
 )
 
